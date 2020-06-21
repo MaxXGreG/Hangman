@@ -10,7 +10,6 @@ body {
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
     display: flex;
     justify-content: center;
 }
@@ -19,5 +18,69 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
+    top: 10%;
 }
 
+#display img {
+    min-width: 190%;
+    transition: .5s ease-in;
+}
+
+#letters {
+    position: absolute;
+    top: 54%;
+    color: black;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.input {
+    position: absolute;
+    bottom: 20%;
+}
+
+#title {
+    font-size: 55px;
+}
+
+input {
+    outline: none;
+    border: none;
+    color: black;
+} 
+
+.input #letterGuess, #letterLabel{
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+.input #wordGuess, #wordLabel{
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+.input #letterBtn {
+    cursor: pointer;
+    font-size: 3.4em;
+}
+
+.input #wordBtn {
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.input label, input {
+    display: inline-block;
+}
+
+.input i {
+    transition: all .5s;
+}
+
+i:hover {
+    opacity: .7;
+    color: aquamarine;
+    transform: scale(1.2);
+}
