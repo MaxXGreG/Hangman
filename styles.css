@@ -85,3 +85,12 @@ i:hover {
     color: aquamarine;
     transform: scale(1.2);
 }
+
+.scoreDisplay {
+    display: flex;
+    font-size: 25px;
+}
+
+#score {
+    margin-left: 10px;
+}

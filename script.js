@@ -3,6 +3,7 @@ let head = '<img src="/img/head.png" alt="head">'
 let body = '<img src="/img/headBody.png" alt="Body">'
 let hands = '<img src="/img/hands.png" alt="hands">'
 let dead = '<img src="/img/dead.png" alt="dead">'
+let score = 0;
 let wg = 0
 let uns;
 let words = ["checkbook",
@@ -43,9 +44,18 @@ function getRandom() {
 }
 
 function startGame() {
+    if (localStorage.getItem('score')) {
+        document.querySelector('#score').innerHTML = parseInt(localStorage.getItem('score'))
+    } else {
+        document.querySelector('#score').innerHTML = 0
+    }
+
+    let us;
+    document.querySelector('#display').innerHTML = rope
     let word = getUnderscore(words[getRandom()])
     document.querySelector('#letters').innerHTML = word
-    let us = document.querySelector('#letters').innerHTML
+    us = document.querySelector('#letters').innerHTML
+    
     us = us.split(" ")
     us.pop()
     uns = us;
@@ -63,41 +73,52 @@ function getUnderscore(cw) {
 
 function letterGuess() {
     let letter = document.querySelector('#letterGuess').value
-    
-    if(w.includes(letter)) {
-        let correct = w.indexOf(letter)
+    if(letter){    
+        if(w.includes(letter)) {
+            let correct = w.indexOf(letter)
 
-        //Check if the letter repeats itself
-        var count = 0;
-        for(var i = 0; i<w.length; ++i){
-           if(w[i] == letter) {
-               count++
-           }
-        }
-
-        if(count>1){
-            var indices = []
-            for(var i=0; i < w.length; ++i){
-                if(w[i] == letter) {
-                    indices.push(i)
-                    for(let i = 0; i<indices.length; i++) {
-                        uns[indices[i]] = letter
-                    }
-                } 
+            //Check if the letter repeats itself
+            var count = 0;
+            for(var i = 0; i<w.length; ++i){
+            if(w[i] == letter) {
+                count++
             }
-        } else {
-            uns[correct] = letter
+            }
+
+            if(count>1){
+                var indices = []
+                for(var i=0; i < w.length; ++i){
+                    if(w[i] == letter) {
+                        indices.push(i)
+                        for(let i = 0; i<indices.length; i++) {
+                            uns[indices[i]] = letter
+                        }
+                    } 
+                }
+            } else {
+                uns[correct] = letter
+            }
+            uns = uns.join()
+            uns = uns.replace(/,/g, " ")
+            
+            document.querySelector('#letters').innerHTML = uns
+            if(!uns.includes('_')){
+                if(parseInt(localStorage.getItem('score')) > 1) {
+                    win(parseInt(localStorage.getItem('score')))
+                } else {
+                    win(0)
+                }
+            }
+        } else { 
+            uns = uns.join()
+            uns = uns.replace(/,/g, " ")
+            wg++
+            incorrect(wg)
         }
-        uns = uns.join()
-        uns = uns.replace(/,/g, " ")
-    } else { 
-        uns = uns.join()
-        uns = uns.replace(/,/g, " ")
-        wg++
-        incorrect(wg)
+        uns = uns.split(" ")
+    } else {
+        alert('Shouldn\'t be empty')
     }
-    document.querySelector('#letters').innerHTML = uns
-    uns = uns.split(" ")
 }
 
 function incorrect(wrongGuesses) {
@@ -114,3 +135,16 @@ function incorrect(wrongGuesses) {
         location = location
     } 
 }
+var localStorage = localStorage in window
+function win(s) {
+    s++
+    localStorage.setItem("score", s)
+    location = location
+}
+
+// Event listeners
+document.querySelector('#letterGuess').addEventListener('keypress', (e) => {
+    if(e.keyCode == 13){
+        letterGuess()
+    }
+})
