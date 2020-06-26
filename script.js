@@ -103,7 +103,7 @@ function letterGuess() {
             
             document.querySelector('#letters').innerHTML = uns
             if(!uns.includes('_')){
-                if(parseInt(localStorage.getItem('score')) > 1) {
+                if(parseInt(localStorage.getItem('score')) >= 1) {
                     win(parseInt(localStorage.getItem('score')))
                 } else {
                     win(0)
@@ -135,6 +135,35 @@ function incorrect(wrongGuesses) {
         location = location
     } 
 }
+
+function guessWord() {
+    let guessedWord = document.querySelector('#wordGuess').value.split("")
+    // console.lo
+    if(guessedWord.length>=1){
+        let wrong;
+        let correct;
+        for(let i = 0; i<guessedWord.length; i++) {
+            if(guessedWord[i] == w[i]) {
+                correct = true
+            } else {
+                wrong = true
+            }
+        }
+        if(wrong) {
+            wg++
+            incorrect(wg)
+        } else {
+            if(parseInt(localStorage.getItem('score')) >= 1) {
+                win(parseInt(localStorage.getItem('score')))
+            } else {
+                win(0)
+            }
+        }
+    } else {
+        alert('Shouldn\'t be empty')
+    }
+}
+
 var localStorage = localStorage in window
 function win(s) {
     s++
@@ -146,5 +175,11 @@ function win(s) {
 document.querySelector('#letterGuess').addEventListener('keypress', (e) => {
     if(e.keyCode == 13){
         letterGuess()
+    }
+})
+
+document.querySelector('#wordGuess').addEventListener('keypress', (e) => {
+    if(e.keyCode == 13){
+        guessWord()
     }
 })
