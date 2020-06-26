@@ -89,8 +89,28 @@ i:hover {
 .scoreDisplay {
     display: flex;
     font-size: 25px;
+    margin-left: 10em;
+    margin-top: 5px;
+    position: absolute;
 }
 
 #score {
     margin-left: 10px;
+}
+
+#clear {
+    height: 50px;
+    width: 5em;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 10px;
+    background-color: #FF4455;
+    outline: none;
+    transition: all .5s;
+}
+
+#clear:hover {
+    border-radius: 20px;
+    background-color: #FF3333;
 }

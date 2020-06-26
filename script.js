@@ -171,6 +171,13 @@ function win(s) {
     location = location
 }
 
+function clearScore() {
+    if (confirm('Are you sure you want to remove your score?')) {
+        localStorage.setItem('score', 0)
+        document.querySelector('#score').innerHTML = parseInt(localStorage.getItem('score'))  
+    }
+}
+
 // Event listeners
 document.querySelector('#letterGuess').addEventListener('keypress', (e) => {
     if(e.keyCode == 13){
