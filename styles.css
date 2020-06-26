@@ -23,7 +23,7 @@ body {
 
 #display img {
     min-width: 190%;
-    transition: .5s ease-in;
+    transition: all 1s;
 }
 
 #letters {
@@ -49,6 +49,7 @@ input {
     outline: none;
     border: none;
     color: black;
+    font-family: 'Montserrat', sans-serif;
 } 
 
 .input #letterGuess, #letterLabel{

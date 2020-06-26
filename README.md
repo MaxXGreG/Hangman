@@ -1,4 +1,4 @@
-###A hangman app made with HTML,CSS and JavaScript
+# A hangman app made with HTML,CSS and JavaScript
 
 
 * [x] Write the markup
@@ -11,3 +11,4 @@
 * [] Add reward and punishment
 * [] Add guessed letters container
 * [] Add game cycle 
+* [] Add responsivenes
