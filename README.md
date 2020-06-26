@@ -6,9 +6,10 @@
 * [x] Generate random words
 * [x] Get underscores
 * [x] Display underscores
-* [] Add guess lettter function
+* [x] Add guess lettter function
 * [] Add guess word function
-* [] Add reward and punishment
+* [] Add reward
+* [x] Add punishment
 * [] Add guessed letters container
 * [] Add game cycle 
 * [] Add responsivenes
