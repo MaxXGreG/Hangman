@@ -1,7 +1,9 @@
 let rope = '<img src="/img/hangman.png" alt="rope"></img>'
 let head = '<img src="/img/head.png" alt="head">'
 let body = '<img src="/img/headBody.png" alt="Body">'
-let hands = '<img src="/img/hands.png" alt="hands">'
+let leftHand = '<img src="/img/leftHand.png" alt="leftHand">'
+let bothHands = '<img src="/img/hands.png" alt="hands">'
+let leftLeg = '<img src="/img/leftLeg.png" alt="leftLeg">'
 let dead = '<img src="/img/dead.png" alt="dead">'
 let score = 0;
 let wg = 0
@@ -127,8 +129,12 @@ function incorrect(wrongGuesses) {
     } else if(wrongGuesses == 2) {
         document.querySelector('#display').innerHTML = body
     } else if(wrongGuesses == 3) {
-        document.querySelector('#display').innerHTML = hands
+        document.querySelector('#display').innerHTML = leftHand
     } else if(wrongGuesses == 4) {
+        document.querySelector('#display').innerHTML = bothHands
+    } else if(wrongGuesses == 5) {
+        document.querySelector('#display').innerHTML = leftLeg
+    } else if(wrongGuesses == 6) {
         document.querySelector('#display').innerHTML = dead
         wg = 0
         alert('You died')
