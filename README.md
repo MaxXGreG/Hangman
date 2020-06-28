@@ -7,9 +7,9 @@
 * [x] Get underscores
 * [x] Display underscores
 * [x] Add guess lettter function
-* [] Add guess word function
-* [] Add reward
+* [x] Add guess word function
+* [x] Add reward
 * [x] Add punishment
 * [] Add guessed letters container
-* [] Add game cycle 
+* [x] Add game cycle 
 * [] Add responsivenes
