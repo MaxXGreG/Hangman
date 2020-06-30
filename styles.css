@@ -115,3 +115,14 @@ i:hover {
     border-radius: 20px;
     background-color: #FF3333;
 }
+
+.guessedLetters {
+    position: absolute;
+    bottom: 5em;
+    display: flex;
+    font-size: 20px;
+}
+
+.guessedLetters span {
+    letter-spacing: 5px;
+}

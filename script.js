@@ -112,6 +112,7 @@ function letterGuess() {
                 }
             }
         } else { 
+            document.querySelector('.guessedLetters').insertAdjacentHTML('afterbegin', `<span>${letter}</span>`)
             uns = uns.join()
             uns = uns.replace(/,/g, " ")
             wg++
