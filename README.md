@@ -10,6 +10,6 @@
 * [x] Add guess word function
 * [x] Add reward
 * [x] Add punishment
-* [] Add guessed letters container
+* [x] Add guessed letters container
 * [x] Add game cycle 
 * [] Add responsivenes
