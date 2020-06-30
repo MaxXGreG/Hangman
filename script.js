@@ -138,24 +138,28 @@ function incorrect(wrongGuesses) {
         document.querySelector('#display').innerHTML = dead
         wg = 0
         alert('You died')
+        localStorage.setItem("score", 0)
         location = location
     } 
 }
 
 function guessWord() {
     let guessedWord = document.querySelector('#wordGuess').value.split("")
-    // console.lo
+    let wrong = 0
     if(guessedWord.length>=1){
-        let wrong;
-        let correct;
-        for(let i = 0; i<guessedWord.length; i++) {
-            if(guessedWord[i] == w[i]) {
-                correct = true
-            } else {
-                wrong = true
+        //let correct = 0
+        if(guessedWord.length != w.length) {
+            wrong ++
+        } else {
+            for(let i = 0; i<guessedWord.length; i++) {
+                if(guessedWord[i] === w[i]) {
+                    wrong += 0
+                } else {
+                    wrong++
+                }
             }
         }
-        if(wrong) {
+        if(wrong == true) {
             wg++
             incorrect(wg)
         } else {
