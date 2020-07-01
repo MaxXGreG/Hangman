@@ -138,7 +138,7 @@ function incorrect(wrongGuesses) {
     } else if(wrongGuesses == 6) {
         document.querySelector('#display').innerHTML = dead
         wg = 0
-        alert('You died')
+        alert('You died, thw word was '+ w.join().replace(/,/g, "") +'!')
         localStorage.setItem("score", 0)
         location = location
     } 
