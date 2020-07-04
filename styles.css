@@ -138,4 +138,19 @@ i:hover {
     .scoreDisplay {
         font-size: 20px;
     }
+    .input #letterGuess, #letterLabel {
+        font-size: 1.5em;
+    }
+    .input #wordGuess, #wordLabel {
+        font-size: 1em;
+    }
+    .input #letterBtn {
+        cursor: pointer;
+        font-size: 2.4em;
+    }
+    
+    .input #wordBtn {
+        cursor: pointer;
+        font-size: 1.5em;
+    }
 }
