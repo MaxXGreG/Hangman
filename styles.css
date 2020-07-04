@@ -126,3 +126,16 @@ i:hover {
 .guessedLetters span {
     letter-spacing: 5px;
 }
+
+@media (max-width: 1000px) {
+    #title {
+        font-size: 40px;
+    }
+    #clear {
+        height: 35px;
+        width: 3em;
+    }
+    .scoreDisplay {
+        font-size: 20px;
+    }
+}
