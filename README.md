@@ -12,4 +12,4 @@
 * [x] Add punishment
 * [x] Add guessed letters container
 * [x] Add game cycle 
-* [] Add responsivenes
+* [x] Add responsivenes
